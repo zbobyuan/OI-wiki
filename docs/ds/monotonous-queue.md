@@ -78,7 +78,7 @@ Ps. 单调队列中的 "队列" 与正常的队列有一定的区别，稍后会
       for (int i = k; i <= n; i++) {
         while (head <= tail && a[q[tail]] >= a[i]) tail--;
         q[++tail] = i;
-        while (q[head] <= i - k) head++;
+        if (q[head] <= i - k) head++;
         printf("%d ", a[q[head]]);
       }
     }
@@ -92,7 +92,7 @@ Ps. 单调队列中的 "队列" 与正常的队列有一定的区别，稍后会
       for (int i = k; i <= n; i++) {
         while (head <= tail && a[q[tail]] <= a[i]) tail--;
         q[++tail] = i;
-        while (q[head] <= i - k) head++;
+        if (q[head] <= i - k) head++;
         printf("%d ", a[q[head]]);
       }
     }
